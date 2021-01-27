@@ -16,17 +16,18 @@ const useStyles = makeStyles({
 	},
 });
 
-export default function Nav() {
+export default function Nav(props) {
 	const classes = useStyles();
 	return (
 		<div>
-			<AppBar>
+			<AppBar position='static' style={{ margin: 0 }}>
 				<Toolbar>
 					<Typography variant='h6' className={classes.typographyStyles}>
 						FaceGram
 					</Typography>
 					<IconButton className={classes.iconButtonStyles}>
 						<AccountCircleIcon />
+						<Typography>{props.name}</Typography>
 					</IconButton>
 					<IconButton className={classes.iconButtonStyles}>
 						<MessageIcon />
