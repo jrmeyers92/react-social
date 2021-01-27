@@ -12,8 +12,8 @@ function App() {
 
 	return (
 		<div className='App'>
-			{/* <Login setTheUsername={setTheUsername} /> */}
-			<Nav />
+			<Login setTheUsername={setTheUsername} />
+			{/* <Nav /> */}
 		</div>
 	);
 }

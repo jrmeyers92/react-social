@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
 	Avatar,
 	Button,
@@ -32,7 +33,6 @@ const Login = (props) => {
 					<Avatar style={avatarStyle}>
 						<LockIcon />
 					</Avatar>
-					<h2>Sign In</h2>
 				</Grid>
 				<form>
 					<TextField
