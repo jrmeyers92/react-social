@@ -28,23 +28,26 @@ export default function Messages() {
 		return messages.map((message) => {
 			// let messageLength = message.messages.length;
 			return (
-				<List className={classes.root}>
-					<ListItem alignItems='flex-start'>
-						<ListItemText
-							secondary={
-								<React.Fragment>
-									<Typography
-										component='span'
-										variant='body2'
-										className={classes.inline}
-										color='textPrimary'>
-										{`${message.GroupName} -- `}
-									</Typography>
-									{message.messages[0].message}
-								</React.Fragment>
-							}></ListItemText>
-					</ListItem>
-				</List>
+				<div>
+					<List className={classes.root}>
+						<ListItem alignItems='flex-start'>
+							<ListItemText
+								secondary={
+									<React.Fragment>
+										<Typography
+											component='span'
+											variant='body2'
+											className={classes.inline}
+											color='textPrimary'>
+											{`${message.GroupName} -- `}
+										</Typography>
+										{message.messages[0].message}
+									</React.Fragment>
+								}></ListItemText>
+						</ListItem>
+					</List>
+					{/* <Divider component='li' variant='middle' /> */}
+				</div>
 			);
 		});
 	}
@@ -67,7 +70,7 @@ export default function Messages() {
 	// }
 	// 		/>
 	// 	</ListItem>
-	// 	<Divider component='li' />
+	// <Divider component='li' />
 	// 	<ListItem alignItems='flex-start'>
 	// 		<ListItemText
 	// 			primary='Work Group'
