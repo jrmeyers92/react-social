@@ -1,23 +1,11 @@
 import React from "react";
 import Layout from "../../Shared/Layout";
-import Comments from "./Comments";
+// import Comments from "./Comments";
 import Messages from "./Messages";
 import { MessagesProvider } from "./MessagesContext";
+import Accordian from "./Accordian";
 
 const Home = (props) => {
-	const messages = [
-		{
-			to: "Work Chat",
-			messageHistory: [
-				{
-					from: "David",
-					Message:
-						"When was the deadline for the planning and purchasing report again?",
-				},
-			],
-		},
-	];
-
 	return (
 		<div>
 			<Layout name={props.name} />
@@ -25,6 +13,7 @@ const Home = (props) => {
 			<MessagesProvider>
 				<Messages />
 			</MessagesProvider>
+			<Accordian />
 		</div>
 	);
 };

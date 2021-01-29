@@ -3,7 +3,6 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Divider from "@material-ui/core/Divider";
 import ListItemText from "@material-ui/core/ListItemText";
-import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import { MessagesContext } from "./MessagesContext";
 
@@ -12,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
 		width: "100%",
 		maxWidth: "36ch",
 		backgroundColor: theme.palette.background.paper,
+		cursor: "pointer",
 	},
 	inline: {
 		display: "inline",
@@ -20,33 +20,26 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Messages() {
 	const messages = useContext(MessagesContext);
-
 	const classes = useStyles();
-	console.log(messages);
 
 	if (messages) {
 		return messages.map((message) => {
-			// let messageLength = message.messages.length;
+			let messageLength = message.messages.length - 1;
+			console.log(messageLength);
 			return (
-				<div>
+				<div className={classes.root}>
 					<List className={classes.root}>
 						<ListItem alignItems='flex-start'>
 							<ListItemText
+								primary={message.GroupName}
 								secondary={
 									<React.Fragment>
-										<Typography
-											component='span'
-											variant='body2'
-											className={classes.inline}
-											color='textPrimary'>
-											{`${message.GroupName} -- `}
-										</Typography>
-										{message.messages[0].message}
+										{message.messages[messageLength].message}
 									</React.Fragment>
 								}></ListItemText>
 						</ListItem>
 					</List>
-					{/* <Divider component='li' variant='middle' /> */}
+					<Divider component='li' variant='middle' />
 				</div>
 			);
 		});

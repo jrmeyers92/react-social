@@ -57,6 +57,15 @@ export const MessagesProvider = (props) => {
 				},
 			],
 		},
+		{
+			GroupName: "Jeremy",
+			messages: [
+				{
+					message: "Hey dude, are you playing pickup tonight?",
+					from: "Jeremy",
+				},
+			],
+		},
 	]);
 
 	return (
