@@ -8,8 +8,9 @@ const Comments = () => {
 			let firstname = faker.name.firstName();
 			let lastName = faker.name.lastName();
 			let name = `${firstname} ${lastName}`;
+			let img = faker.image.people();
 			let sentence = faker.lorem.sentence();
-			let obj = { name: name, sentence: sentence };
+			let obj = { name: name, sentence: sentence, img: img };
 			users.push(obj);
 		}
 	};
@@ -24,6 +25,7 @@ const Comments = () => {
 						<div>
 							<h2>{user.name}</h2>
 							<p>{user.sentence}</p>
+							<img src={user.img} alt={user.name} />
 						</div>
 					);
 				})}

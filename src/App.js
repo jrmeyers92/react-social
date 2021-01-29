@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Home from "./components/Home/Home";
 import "./App.css";
-import Faker from "./Faker";
 
 export default function App() {
 	const [username, setUsername] = useState("");

@@ -5,6 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import MessageIcon from "@material-ui/icons/Message";
 import React from "react";
 import NotificationsIcon from "@material-ui/icons/Notifications";
+import Badge from "@material-ui/core/Badge";
 
 const useStyles = makeStyles({
 	typographyStyles: {
@@ -30,10 +31,14 @@ export default function Nav(props) {
 						<Typography>{props.name}</Typography>
 					</IconButton>
 					<IconButton className={classes.iconButtonStyles}>
-						<MessageIcon />
+						<Badge badgeContent={3} color='secondary'>
+							<MessageIcon />
+						</Badge>
 					</IconButton>
 					<IconButton className={classes.iconButtonStyles}>
-						<NotificationsIcon />
+						<Badge badgeContent={6} color='secondary'>
+							<NotificationsIcon />
+						</Badge>
 					</IconButton>
 				</Toolbar>
 			</AppBar>
